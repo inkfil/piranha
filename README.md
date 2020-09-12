@@ -153,6 +153,7 @@ $ mkdir ~/sample_venv
 $ cd ~/sample_venv
 $ virtualenv env_name
 $ source env/bin/activate
+$ python3 -m django --version
 $ django-admin startproject EDA
 $ python3 manage.py runserver
 
