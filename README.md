@@ -258,6 +258,7 @@ python3 manage.py startapp <app-name>
 # root/project/settings.py
 INSTALLED_APPS=[
     ....,
+    'rest_framework',
     '<app-name>',
 ]
 ```
@@ -292,6 +293,32 @@ from django.http import HttpResponse
 
 def index(request):
     return HttpResponse("Fuck, world.")
+
+def renderhtml(request):
+    return render(request,"sample.html",{'data':'this is context data.'}) 
 ```
 
+```html
+<!-- root/<app-name>/templates/sample.html -->
+{% include "base.html" %}
+<h1>Hello, World!</h1>
+{{ data }}
+```
+
+```html
+<!-- root/<app-name>/templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>base html page</title>
+</head>
+<body>
+{%block content%}
+
+{% endblock %}
+</body>
+</html>
+```
 
