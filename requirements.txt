@@ -1,1 +1,6 @@
 django == 3.1
+numpy
+sklearn ( scikit-learn )
+pandas
+pip3 install pytz python-dateutil
+pip3 install pandas

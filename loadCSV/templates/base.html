@@ -1,34 +1,58 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
+{% load static %}
 
 <head>
-    <meta charset = "UTF-8">
+    <meta charset="UTF-8">
     <title>Base html page</title>
-    <script type = "text/javascript" src="https://d3js.org/d3.v6.min.js"></script>
+
+    <link rel="stylesheet" href="{% static "/assets/css/bootstrap-dark.css" %}">
+    </link>
+    <script type="text/javascript" src="https://d3js.org/d3.v6.min.js"></script>
+    <script type="text/javascript" src="{% static "/assets/js/bootstrap.bundle.min.js" %}"></script>
 </head>
 
 <body>
 
 
 </body>
+<!-- Navbar reference taken from https://bootswatch.com/darkly/ -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">./piranha</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
+        aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-<div class = "myclass1"> hello bitches!!
-<svg width = "500" height = "500">
-    <rect x = "0" y = "0" width = "300" height = "200" fill='red'></rect>
-    <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" ></circle>
- </svg>
-</div>
-<div id = 'yoyo'>yoyo</div>
-<div class = "myclass">
-    Hello World!
- </div>
+    <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Dash <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Load Data</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Feature select</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Model select</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html">Model Evaluate</a>
+            </li>
+            
+        </ul>
+
+    </div>
+</nav>
+
+</br>
+    {%block content%}
+    {% endblock %}
 
 <script>
-    // write your d3 code here.. 
-    alert(d3.select("div").text());
-    alert(d3.select(".myclass1").text());
-    alert(d3.select("#yoyo").text());
-    d3.select("div.myclass").append("span");
-    d3.select("div.myclass").append("span").text("from D3.js");
- </script>
+
+</script>
+
 </html>

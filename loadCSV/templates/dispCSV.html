@@ -1,0 +1,10 @@
+{% include "base.html" %}
+
+<div class="container">
+    {% for c in data %}
+        <td>{{ c }}</td></br>
+    {% endfor %}
+    {% for c in data.itertuples %}
+        <td>{{ c }}</td></br>
+    {% endfor %}
+</div>

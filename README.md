@@ -128,7 +128,12 @@ REFERENCES:
 # D3.js
 ## CDN
 ```html
+<!--D3js-->
 <script type = "text/javascript" src="https://d3js.org/d3.v6.min.js"></script>
+<!--Bootsrap-->
+<!--jquery-->
+<!--poper-->
+<!--others-->
 ```
 
 | Category | currency | sellerRating | Duration | endDay | ClosePrice | OpenPrice | Competitive |
@@ -158,3 +163,36 @@ $ django-admin startproject EDA
 $ python3 manage.py runserver
 
 ```
+Machine Learning Life Cycle
+- Data Collection
+
+- Feature Engineering
+	- Stats
+	- Fix missing data
+	- outlier detection and fixing
+	- Standardization
+	- Normalization
+	- Data Augmentation
+	- One Hot Encoding
+	- Label Encoding
+	- Feature Engineering
+	- Feature Selection
+
+- EDA
+	- line plots
+	- histogram
+	- scatter plot
+	- piechart/bargraph
+	- box and whiskers (candle stick plot)
+	- pair plots
+	- violin plots
+	- joint plots
+
+- Model Selection
+- Model Training
+- Model Evaluation
+
+
+REFERENCES:
+	[CSV Header read only](https://stackoverflow.com/questions/24962908/how-can-i-read-only-the-header-column-of-a-csv-file-using-python)
+	[looping pandas dataframe in django template](https://stackoverflow.com/questions/48762617/loop-pandas-table-in-django-template)
