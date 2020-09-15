@@ -196,3 +196,102 @@ Machine Learning Life Cycle
 REFERENCES:
 	[CSV Header read only](https://stackoverflow.com/questions/24962908/how-can-i-read-only-the-header-column-of-a-csv-file-using-python)
 	[looping pandas dataframe in django template](https://stackoverflow.com/questions/48762617/loop-pandas-table-in-django-template)
+	
+	
+# Django Rest Framework (setup and samples)
+
+## Installing Django and Django Rest Framework
+
+```bash
+sudo apt-get install python3 pip3
+python3 -m pip installed django djangorestframework
+```
+
+## setting up django project
+
+```bash
+django-admin startproject <project-name>
+```
+
+```bash
+cd <project-name>
+python3 manage.py makemigrations
+python3 manage.py migrate
+python3 manaeg.py runserver
+```
+
+```
+# Django Projec Structure
+
+Root
+├── Project
+|  ├── __pycache__
+|  ├── __init__.py
+|  ├── asgi.py
+|  ├── settings.py
+|  ├── urls.py
+|  └── wsgi.py
+├── app1
+|  ├── __pycache__
+|  ├── migrations
+|  ├── templates
+|  ├── __init__.py
+|  ├── admin.py
+|  ├── apps.py
+|  ├── functions.py
+|  ├── models.py
+|  ├── tests.py
+|  ├── urls.py
+|  └── views.py
+├── app2
+|  ├── __pycache__
+|  └── ...
+├── db.sqlite3
+└── manage.py 
+```
+
+```bash
+python3 manage.py startapp <app-name>
+```
+
+```python
+# root/project/settings.py
+INSTALLED_APPS=[
+    ....,
+    '<app-name>',
+]
+```
+
+```python
+# root/project/urls.py
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include("<app-name>.urls")),
+]
+```
+
+```python
+# root/<app-name>/urls.py
+from django.contrib import admin
+from django.urls import path, include
+
+from . import views
+
+urlpatterns = [
+    path('', views.index, name="basic_index")
+]
+```
+
+```python
+# root/<app-name>/views.py
+from django.shortcuts import render
+from django.http import HttpResponse
+
+def index(request):
+    return HttpResponse("Fuck, world.")
+```
+
+
